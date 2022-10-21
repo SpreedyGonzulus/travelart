@@ -25,6 +25,7 @@ header{
     justify-content: space-between;
     padding:20px;
     border-bottom: 2px solid white;
+    transition: 0.5s;
  ul{
     display:flex;
     gap:20px;
@@ -89,9 +90,7 @@ button{
 
 }
 
-.opis{
-    
-}
+
 
 .fala{
     
@@ -117,6 +116,8 @@ button{
     left:0;
     border-top-right-radius: 40%;
     z-index:5;
+    line-height: 80px;
+    text-align: center;
     
     
 }
@@ -124,7 +125,6 @@ button{
 .bi-clock{
 color:white;
 font-size:45px;
-position:fixed;
 left:13px;
 top:585px;
 z-index:5;
@@ -160,9 +160,8 @@ z-index:5;
 
 .pogoda{
     width:100%;
-    height:400px;
+    height:300px;
     background-color:rgb(241, 234, 234);
-    
     bottom:0;
 }
 
@@ -225,26 +224,113 @@ z-index:5;
 .ikonki {
     display:flex;
     font-size:40px;
-    
-    justify-content:space-around;
-    
-    
+    justify-content:space-around;    
     
 }
+
+.ikonki1{
+    text-align: center;
+
+}
+
+.poprawa{
+    position:relative;
+left:13px;
+}
+
 .stopnie{
     
     color:orangered;  
-    font-size: 37px; 
+    font-size: 37px;   
 
+}
+
+.hotels{
+    text-align: center;
+    height:100px;
+    margin-top:50px;
+    
+    
+}
+
+.hotelik{
+    font-size: 32px;
+}
+
+.hotelcard{
    
 }
 
-.stopnie1{
-     display:flex;
-     
-    
- }
 
+
+.hotelswrapper{
+    
+    display:flex;
+    justify-content: center;
+    gap:20px;
+    padding-bottom:60px;
+    
+
+}
+
+.hotelinfo{
+    display:flex;
+    justify-content: space-between;
+}
+
+.opis_hot{
+
+    color:#202020;
+    opacity:70%;
+    display:flex;
+    font-size: 14px;
+}
+
+.cena{
+    display:flex;
+    font-size: 16px;
+}
+
+footer{
+    background-color: black;
+    height:150px;
+    
+  }
+
+.sociale{
+    color:white;
+    padding:20px;
+    display:flex;
+    justify-content: center;
+    
+    gap:40px;
+    font-size:35px;  
+}
+
+.inne{
+    color:white;
+    display:flex;
+    justify-content: center;
+    gap:20px;
+        
+}
+
+.privacy{
+    display:flex;
+    justify-content:center;
+    color:white;
+    gap:20px;
+    background-color: black;
+    padding-top:14px;
+}
+
+.c{
+    background-color: black;
+    color:white;
+    padding-bottom:12px;
+    padding-top:10px;
+}
+ 
 
 
 
@@ -258,20 +344,14 @@ z-index:5;
     height:100%;
     left:-100%;
     transition: 0.5s;
-
+}
     
   ul{
     display:block;
      padding:20px;
     margin-top:250px;
 
-    
-  }  
-  
-  
-
-    
-}
+     }  
 
     .kraj1{
         display:none;
@@ -297,3 +377,59 @@ z-index:5;
     left:-100%;
  }
 
+ @media(max-width:992px) {
+
+    .wszystkie_zdj{
+        flex-direction: column;
+        
+    }
+
+    .hotelswrapper{
+        
+            flex-direction: column;
+            align-items: center;
+        
+    }
+
+    .hotelcard{
+        width:70%;
+        max-width: 350px;
+    }
+    .hotelcard>img{
+        width:100%;
+    }
+
+    .przycisk{
+        display:flex;
+        justify-content: center;
+        margin-bottom:40px;
+        
+        
+    }
+
+    .banner{
+        gap:0;
+    }
+    
+
+    .powitanie{
+        text-align: center;
+    }
+
+    .opis1{
+        text-align: center;
+    }
+    
+  
+
+ }
+
+
+
+
+ .inverted {
+    background-color: rgb(124, 120, 120);
+    
+    
+    
+}

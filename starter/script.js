@@ -27,8 +27,13 @@ const currentHour=document.getElementById("Hour");
 const hour=new Date().getHours();
 const minutes=new Date().getMinutes();
 const seconds=new Date().getSeconds();
+const s = seconds < 10 ? `0${seconds}` : seconds;
 
-currentHour.textContent=`${hour}:${minutes}:${seconds}`;
+const m=minutes<10 ? `0${minutes}` : minutes;
+
+const h=hour<10 ? `0${hour}` : hour;
+
+currentHour.textContent=`${h}:${m}:${s}`;
 
 
 
@@ -37,8 +42,25 @@ currentHour.textContent=`${hour}:${minutes}:${seconds}`;
 setInterval(interwal,1000);
 
 
+
+
+
+
 zegarek.addEventListener("click",zegar)
 
 button1.addEventListener("click",wysun)
 
+const className = "inverted";
+const scrollTrigger = 500;
+const header = document.getElementById("Header");
 
+function changeHeaderBg () {
+    
+    if (window.scrollY >= scrollTrigger || window.pageYOffset >= scrollTrigger) {
+        header.classList.add(className);
+      } else {
+        header.classList.remove(className);
+      }
+}
+
+window.addEventListener("scroll", changeHeaderBg);
