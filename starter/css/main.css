@@ -7,6 +7,8 @@ header {
 
 .banner {
   background-image: url("../images/BG Image.png");
+  background-repeat: no-repeat;
+  background-size: cover;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -73,7 +75,7 @@ button {
   width: 100%;
   bottom: 0px;
   background-image: url("../images/wave.svg");
-  height: 250px;
+  height: 271px;
   background-size: cover;
 }
 
@@ -184,9 +186,6 @@ button {
   display: flex;
   font-size: 40px;
   justify-content: space-around;
-}
-
-.ikonki1 {
   text-align: center;
 }
 
@@ -282,7 +281,7 @@ footer {
     transition: 0.5s;
   }
   ul {
-    display: block;
+    display: block !important;
     padding: 20px;
     margin-top: 250px;
   }

@@ -10,6 +10,8 @@ header{
 
 .banner{
     background-image: url("../images/BG\ Image.png");
+    background-repeat:no-repeat;
+    background-size:cover;
     min-height:100vh;
     display:flex;
     align-items:center;
@@ -39,8 +41,6 @@ li{
     
 }
 
-
-
 .kraj{
     height:170px;
     width:130px;
@@ -48,30 +48,22 @@ li{
     
 }
 
-
 .opis1{
     color:white;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 20px;
     
 }
-.zdjecia{
-      
 
-}
 button{
     height:45px;
     width:140px;
     border-radius:50px;
     border:white;
-    
-
 }
 
 .przycisk{
-    margin-top:40px;
-
-    
+    margin-top:40px;  
 }
 
 .kraj1{
@@ -79,29 +71,24 @@ button{
     height:170px;
     width:130px;
     position: relative;
-
 }
 
 .powitanie{
     color:white;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 48px;
-    
-
 }
 
-
-
 .fala{
-    
     position:absolute; 
     width:100%;
     bottom:0px;
     background-image: url("../images/wave.svg");
-    height:250px;
+    height:271px;
     background-size: cover;
     
        }
+
 .burgir{
         background-color: transparent;
         display:none;
@@ -117,9 +104,7 @@ button{
     border-top-right-radius: 40%;
     z-index:5;
     line-height: 80px;
-    text-align: center;
-    
-    
+    text-align: center;  
 }
 
 .bi-clock{
@@ -128,8 +113,6 @@ font-size:45px;
 left:13px;
 top:585px;
 z-index:5;
-
-
 }
 
 .tlozegarek{
@@ -172,11 +155,7 @@ z-index:5;
   
     gap:20px;
     padding:20px;
-    padding-top:10px;
-    
-   
-    
-    
+    padding-top:10px;  
 }
 
 .most{
@@ -184,8 +163,6 @@ z-index:5;
     font-size:24px;
     margin-top:30px;
     margin-left:20px;
-    
-
 }
 
 .cardinfo{
@@ -195,8 +172,6 @@ z-index:5;
 .temperatura,.wilgotnosc{
     display:inline-block;
 }
-
-
 
 .card{
     display:flex;
@@ -229,8 +204,6 @@ z-index:5;
     
 }
 
-
-
 .poprawa{
     position:relative;
 left:13px;
@@ -246,20 +219,12 @@ left:13px;
 .hotels{
     text-align: center;
     height:100px;
-    margin-top:50px;
-    
-    
+    margin-top:50px;  
 }
 
 .hotelik{
     font-size: 32px;
 }
-
-.hotelcard{
-   
-}
-
-
 
 .hotelswrapper{
     
@@ -268,7 +233,6 @@ left:13px;
     gap:20px;
     padding-bottom:60px;
     
-
 }
 
 .hotelinfo{
@@ -330,8 +294,6 @@ footer{
 }
  
 
-
-
  @media(max-width:992px) {
 
 .navi{
@@ -345,7 +307,7 @@ footer{
 }
     
   ul{
-    display:block;
+    display:block !important;
      padding:20px;
     margin-top:250px;
 
@@ -368,7 +330,7 @@ footer{
  
  .show{
     left:0;
-
+    
  }
 
  .ukryj{
@@ -418,16 +380,8 @@ footer{
         text-align: center;
     }
     
-  
-
  }
 
-
-
-
  .inverted {
-    background-color: rgb(124, 120, 120);
-    
-    
-    
+    background-color: rgb(124, 120, 120); 
 }

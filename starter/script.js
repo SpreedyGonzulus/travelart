@@ -5,7 +5,6 @@ const zegarek=document.getElementById("Clock");
 
 const tlozeg=document.getElementById("tlozeg");
 
-
 function wysun(){
 
 navigacja.classList.toggle("show");
@@ -35,16 +34,9 @@ const h=hour<10 ? `0${hour}` : hour;
 
 currentHour.textContent=`${h}:${m}:${s}`;
 
-
-
 }
 
 setInterval(interwal,1000);
-
-
-
-
-
 
 zegarek.addEventListener("click",zegar)
 
@@ -65,8 +57,6 @@ function changeHeaderBg () {
 
 window.addEventListener("scroll", changeHeaderBg);
 
-
-
 const hotels = [
   {
     name:"King Hotel",
@@ -75,7 +65,7 @@ const hotels = [
     date:"30 oct-4 nov",
     price:120,
     rate:4,
-    image:"./images/Widget 1.png"
+    image:"./images/Cairo.png"
   },
   {
     name:"Maze bank",
@@ -84,7 +74,7 @@ const hotels = [
     date:"20jan-12feb",
     price:80,
     rate:3,
-    image:"./images/Widget 2.png"
+    image:"./images/Giza.png"
   },
   {
     name:"Diamond Casino",
@@ -93,7 +83,7 @@ const hotels = [
     date:"12jan-12feb",
     price:90,
     rate:5,
-    image:"./images/Widget 3.png"
+    image:"./images/Hurghada.png"
   },
   {
     name:"Los Pallet",
@@ -102,23 +92,17 @@ const hotels = [
     date:"12july-12juny",
     price:45,
     rate:2,
-    image:"./images/Widget 4.png"
+    image:"./images/Alexandria.png"
   }
 
-
-
-  
 ]
 
 const hotelsWrapper=document.getElementById("Hotelswrapper");
-
-
 
 hotels.forEach( (hotel) => {
 const card=document.createElement("article");
  card.classList.add("hotelcard");
  
-
  const hotelinfo=document.createElement("div");
  hotelinfo.classList.add("hotelinfo");
 
@@ -131,7 +115,6 @@ name.textContent = hotelname.length > 14 ? hotelname.slice(0,14) + "..." : hotel
 
 const image =document.createElement("img");
  image.src=hotel.image
-
 
  const icon=document.createElement("span");
  icon.innerHTML=`<i class="bi bi-star-fill"></i>4`
@@ -149,9 +132,6 @@ const image =document.createElement("img");
  opis_hot.classList.add("cena");
  opis_hot.innerHTML=`<p class="cena_hot"><b>$${hotel.price}</b> per night</p>`
  
-
-
-
 card.appendChild(image);
 
 hotelinfo.appendChild(name);
@@ -166,104 +146,87 @@ hotelsWrapper.appendChild(card);
 
 })
 
-
-
-
-
-
-
-
-
 const KEY='912c622485ebcccfe6e75ebb3dc2de10';
 
-const URL = `https://api.openweathermap.org/data/2.5/weather?q=Katowice&appid=${KEY}`;
+const karty=document.getElementById("Karty");
 
-const showWeather = async() => {
+// const URL = `https://api.openweathermap.org/data/2.5/weather?q=Katowice&appid=${KEY}`;
+
+// const URL= `const URL = https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${KEY}`
+
+const allWeather = async () => {
+  const URL = `http://api.openweathermap.org/data/2.5/group?id=360630,360995,361291,361058&units;=metric&appid=${KEY}`
+  const weather = await(await fetch(URL)).json();
+  return [...weather.list];
+}
+
+const getCitiesWeather =(cities)=> {
+  const citiesArray=[];
+  cities.forEach(city => {
+    citiesArray.push({
+      name: city.name,
+      desc: city.weather[0].description,
+      temp: city.main.temp,
+      humidity: city.main.humidity
+
+    })
+   })
+   citiesArray.forEach((city)=> generateCity(city));
+}
+let citiesWeather = allWeather().then(getCitiesWeather);
+
+const generateCity=(city)=>{
+  const card = document.createElement("div");
+  card.classList.add("card")
+  card.innerHTML= `
+  <img src="./images/${city.name}.png">
+            <div class="cardinfo">
+                <h3 class="miejsce">${city.name}</h3>
+                <p class="sytuacja">${city.desc}</p>
+
+                <p class="temperatura"><i class="bi bi-thermometer-half"></i>${convertToCelsius(city.temp)}</p>
+
+                <p class="wilgotnosc"><i class="bi bi-droplet-half"></i>${city.humidity}</p>
+            </div>
+  `
+  karty.appendChild(card);
+}
+
+const showWeather = async(lat,lon) => {
+
+const URL= `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${KEY}`
 
 const pogoda=document.getElementById("Stopnie");
-
-
-
-
+const pogoda1=document.getElementById("Stopnie2");
+const pogoda2=document.getElementById("Stopnie3");
+const pogoda3=document.getElementById("Stopnie4");
+const lokacja=document.getElementById("Lokacja");
 
 const data = await fetch(URL);
 
-
-
 const weather=await data.json();
+console.log(weather);
 
+pogoda.textContent=convertToCelsius(weather.main.temp_max);
+pogoda1.textContent=convertToCelsius(weather.main.temp_min);
+pogoda2.textContent=weather.main.humidity+"%";
 
-pogoda.textContent=weather.main.temp_max;
-
-
-
-
+pogoda3.textContent=weather.wind.speed+"km/h";
+lokacja.textContent="Weather in "+ weather.name;
 
 }
 
-showWeather();
+const convertToCelsius=(temp)=> {
+  const result=temp -273.15
+  return result.toFixed()+ "°C";
 
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// const users = [
-//   {
-//       name:"Jan",
-//       city:"Katowice",
-//       role:"Front and Developer"
-//   },
-//   {
-//       name:"Anna",
-//       city:"Krakow",
-//       role:"Backend Developer"
-
-//   },
-//   {
-//       name:"Zbigniew",
-//       city:"Wroclaw",
-//       role:"Grafik"
-//   }
-// ]
-
-// const wrapper=document.getElementById("Wrapper");
-
-// users.forEach(function(user){
-//   const card=document.createElement("article");
-//   card.classList.add("card");
-
-//   const name=document.createElement("h2");
-//   name.textContent=user.name;
+navigator.geolocation.getCurrentPosition((position) => {
+  let lat = position.coords.latitude;
+  let lon = position.coords.longitude;
+  console.log(lat, lon)
   
-//   const city=document.createElement("h3");
-//   city.textContent=user.city;
+  showWeather(lat,lon);
 
-//   const role=document.createElement("p");
-//   role.textContent=user.role;
-
-//   card.appendChild(name);
-//   card.appendChild(city);
-//   card.appendChild(role);
-
-
-// wrapper.appendChild(card);
-
-// })
+});
