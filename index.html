@@ -12,9 +12,8 @@
 
 <body>
 
-
-    <header class="nav"> <img class="logo" src="./images/logo.png">
-        <nav class="navi">
+    <header class="nav" id="Header"> <img class="logo" src="./images/logo.png">
+        <nav class="navi" id="Navi">
             <ul>
                 <li>Home</li>
                 <li>About</li>
@@ -22,40 +21,102 @@
             </ul>
         </nav>
 
-        <button class="burgir"><img src="./images/Hamburger.png" alt=""></button>
+        <button class="burgir" id="Burgir"><img src="./images/Hamburger.png" alt=""></button>
     </header>
     <main class="banner">
         <div class="opis">
 
-    <div class="powitanie"><b>Good Morning,<br>Dawid</b></div>
+            <div class="powitanie"><b>Good Morning,<br>Dawid</b></div>
 
             <p class="opis1">Lorem ipsum dolor sit,amet consectetur adipisicing
                 elit. <br>Laudantium ipsum hic voluptas veritatis illum, <br>atque nesciunt tempora optio facere libero
                 maiores
                 voluptates corporis et est. <br>Adipisci doloremque at iste dolorum.</p>
 
-               <div class="przycisk"><button>Explore</button></div> 
+            <div class="przycisk"><button class="buton">Explore</button></div>
         </div>
-        
-        
 
-        <div class="zdjecia"> <img class="kraj" src="./images/Widget 1.png"> <img class="kraj1"
-                src="./images/Widget 2.png">
+        <div class="zdjecia"> <img class="kraj" src="./images/Cairo.png"> <img class="kraj1"
+                src="./images/Giza.png">
 
         </div>
 
-        <!-- <img class="fala" src="./images/wave.svg" alt=""> -->
-        
-        <div class="fala"></div>
+        <div class="fala">
+        </div>
 
-        <div class="zegar"><i class="bi bi-clock"></i></div>
-       
+        <div class="zegar"><i class="bi bi-clock" id="Clock"></i></div>
+        <div class="tlozegarek" id="tlozeg">
+            <p class="data" id="Day"></p>
+            <p class="godzina" id="Hour"></p>
+        </div>
+
     </main>
+    <h3 class="most">Most Popular</h3>
 
-   
+    <div class="wszystkie_zdj" id="Karty">
+    </div>
+    <div class="pogoda">
+
+        <p class="katowice" id="Lokacja"></p>
+
+        <div class="ikonki">
+
+            <div class="ikonki1">
+                <i class="bi bi-thermometer-sun"></i>
+                <p class="stopnie" id="Stopnie"></p>
+            </div>
+
+            <div class="ikonki1">
+                <i class="bi bi-thermometer-snow"></i>
+                <p class="stopnie" id="Stopnie2"></p>
+            </div>
+
+            <div class="ikonki1">
+                <i class="bi bi-droplet-half"></i>
+                <p class="stopnie poprawa" id="Stopnie3"></p>
+            </div>
+
+            <div class="ikonki1">
+                <i class="bi bi-wind"></i>
+                <p class="stopnie" id="Stopnie4"></p>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="hotels">
+
+        <h3 class="hotelik">Our Hotels</h3>
+
+        <div class="hotelswrapper" id="Hotelswrapper">
+            
+        </div>
+
+    <footer>
+        <div class="sociale"><i class="bi bi-facebook fb"></i><i class="bi bi-instagram"></i><i class="bi bi-twitter"></i>
+        </div>
 
 
+        <div class="inne">
+            <p class="info">Info</p>
+            <p class="support">Support</p>
+            <p class="Marketing">Marketing</p>
 
+        </div>
+
+        <div class="privacy">
+            <p class="Terms">Terms of Use</p>
+            <p class="Privacy Policy">Privacy Policy</p>
+        </div>
+<div class="c">
+     <p class="c2018">© 2022 NWA </p>
+
+</div>
+
+    </footer>
+
+    <script src="./script.js"> </script>
 
 </body>
 
