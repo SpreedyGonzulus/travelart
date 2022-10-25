@@ -155,7 +155,7 @@ const karty=document.getElementById("Karty");
 // const URL= `const URL = https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${KEY}`
 
 const allWeather = async () => {
-  const URL = `http://api.openweathermap.org/data/2.5/group?id=360630,360995,361291,361058&units;=metric&appid=${KEY}`
+  const URL = `https://api.openweathermap.org/data/2.5/group?id=360630,360995,361291,361058&units;=metric&appid=${KEY}`
   const weather = await(await fetch(URL)).json();
   return [...weather.list];
 }
